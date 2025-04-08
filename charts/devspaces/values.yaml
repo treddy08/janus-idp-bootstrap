@@ -13,3 +13,6 @@ devSpaces:
     namespace: openshift-operators
     channel: stable
     startingCSV: ""
+  kip:
+    enabled: false
+    images: 'devfile-image=quay.io/devfile/universal-developer-image:ubi8-277c10c'
