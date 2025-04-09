@@ -23,8 +23,13 @@ spec:
     devWorkspace: {}
     devfileRegistry: {}
     imagePuller:
-      enable: false
+      enable: {{ .Values.devSpaces.instance.kip.enabled }}
+{{ if .Values.devSpaces.instance.kip.enabled }}
+      spec:
+        images: {{ .Values.devSpaces.instance.kip.images }}      
+{{ else }}
       spec: {}
+{{ end }}
     metrics:
       enable: true
     pluginRegistry:
